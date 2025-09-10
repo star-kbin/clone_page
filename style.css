@@ -1,0 +1,257 @@
+:root {
+  --brand: #00b0b9;
+  --brand-dark: #00848a;
+  --bg: #fff;
+  --fg: #222;
+  --muted: #555;
+  --maxw: 1200px;
+}
+body {
+  margin: 0;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+header {
+  display: grid;
+  position: sticky;
+  top: 0px;
+  background: #white;
+  opacity: 90%;
+}
+
+.nav {
+  display: grid;
+  line-height: 3;
+  grid-template-columns: 100px auto 100px;
+}
+
+.logo {
+  width: 50%;
+  height: 10px;
+  text-align: center;
+  align-items: center;
+  margin: 0px auto;
+  grid-column: 2;
+}
+
+.logo img {
+  padding: 10px;
+  width: 100px; /* 원하는 크기로 조절 */
+  height: auto; /* 비율 유지 */
+}
+
+.menu {
+  grid-column: 1;
+  text-align: center;
+}
+
+.menu img {
+  width: 24px; /* 원하는 크기로 조절 */
+  height: auto; /* 비율 유지 */
+}
+
+.search {
+  grid-column: 3;
+  text-align: center;
+}
+.search img {
+  width: 24px; /* 원하는 크기로 조절 */
+  height: auto; /* 비율 유지 */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  text-decoration: none;
+  font-weight: 500;
+}
+nav a:hover {
+  color: var(--brand);
+}
+
+.hero {
+  display: block;
+  position: relative;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh; /* 브라우저 높이에 꽉 채우기 */
+  min-width: 10%; /* 부모 요소 너비 100% */
+  padding: 60px 30px;
+  background: url("./images/mainbn2_slide_01.jpg") no-repeat center/cover;
+  color: #fff;
+  opacity: 95%;
+  animation: bgChange 12s infinite;
+  transition: opacity 1.5s ease-in-out;
+}
+
+@keyframes bgChange {
+  0% {
+    background-image: url("./images/mainbn2_slide_01.jpg");
+    color: white;
+  }
+  25% {
+    background-image: url("./images/mainbn2_slide_01.jpg");
+    color: white;
+  }
+  50% {
+    background-image: url("./images/mainbn2_slide_02.jpg");
+    color: black;
+  }
+  75% {
+    background-image: url("./images/mainbn2_slide_02.jpg");
+    color: black;
+  }
+  100% {
+    background-image: url("./images/mainbn2_slide_01.jpg");
+    color: white;
+  }
+}
+
+.hero h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  margin: 0 0;
+}
+
+.hero h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100hv;
+}
+
+.hero p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  margin: 0 0 1px;
+}
+
+.btn {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  background: black;
+  width: 10px;
+  height: 10px;
+  padding: 3px;
+  border-radius: 50%;
+  border: 3px;
+  text-decoration: none;
+  opacity: 80%;
+}
+
+.btn:hover {
+  position: absolute;
+  bottom: 30px;
+  left: 48%;
+  background: black;
+  width: 3px;
+  height: 3px;
+  padding: 3px;
+  border-radius: 50%;
+  border: 3px;
+  opacity: 70%;
+  transition-duration: 1.5s;
+}
+
+.products,
+.features {
+  max-width: var(--maxw);
+  margin: 60px auto;
+  padding: 0 16px;
+}
+.products h2,
+.features h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.product-list {
+  display: flex;
+  overflow-x: auto; /* 가로 스크롤 허용 */
+  scroll-snap-type: x mandatory; /* 부드럽게 스냅 스크롤 */
+  -webkit-overflow-scrolling: touch; /* 모바일 부드러운 스크롤 */
+  padding-bottom: 10px;
+}
+
+.product-list::-webkit-scrollbar {
+  height: 8px; /* 가로 스크롤바 높이 */
+}
+
+.product-list::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1); /* 트랙 배경 (연하게) */
+  border-radius: 4px;
+}
+
+.product-list::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1); /* 스크롤바 색상 및 반투명 */
+  border-radius: 4px;
+}
+
+.product {
+  flex: 0 0 auto; /* 줄바꿈 방지, 가로로 계속 배치 */
+  width: 250px; /* 카드 크기 고정 */
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  scroll-snap-align: start; /* 스크롤 멈출 때 카드 정렬 */
+}
+.product img {
+  width: 100%;
+  height: auto;
+}
+.product h3 {
+  margin: 16px 0 8px;
+}
+.features-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+.feature {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+}
+footer {
+  background: #white;
+  color: black;
+  text-align: left;
+  padding: 30px 30px;
+  font-size: 14px;
+  line-height: 50%;
+}
+
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  unicode-bidi: isolate;
+}
+
+.bottom_info h2 {
+  padding: 0 0 15px;
+}
+
+.bottom_info table {
+  width: 700px;
+  border-spacing: 0;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.4em;
+  opacity: 80%;
+}
+
+.bottom_info table td {
+  width: 500px;
+}
